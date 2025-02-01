@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         </li>
         <li className="mb-2 md:mb-4">
           Source code available on{' '}
-          <a className="text-blue-500 hover:underline" href="https://github.com/abdullah-abuhamdan/my-next-portfolio">Github</a>
+          <a className="text-blue-500 hover:underline" href="https://github.com/Badr-Ahmed12/My-Profile">Github</a>
         </li>
       </ul>
     </footer>

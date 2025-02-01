@@ -1,3 +1,5 @@
+'use client';  
+
 import { motion } from 'framer-motion';
 
 const FloatingShapes = () => (
@@ -16,7 +18,7 @@ const FloatingShapes = () => (
       ease: [0.5, 0, 0.5, 1]
     }}
   >
-    <polyhedron
+    <polyline
       points="50,5 100,50 50,95 5,50"
       fill="none"
       stroke="#3B82F6"

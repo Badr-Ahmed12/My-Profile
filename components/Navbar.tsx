@@ -19,9 +19,9 @@ const Nav: React.FC = () => {
           <div className="flex  justify-center space-x-4">
             <NavItem href="/">الرئيسية</NavItem>
             <NavItem href="/about">من أنا</NavItem>
-            <NavItem href="/projects">مشاريعي</NavItem>
-            <NavItem href="/contact">اتصل بي</NavItem>
-            <NavItem href="/blog">المدونة</NavItem>
+            <NavItem href="/MyProjects">مشاريعي</NavItem>
+            <NavItem href="/contect">اتصل بي</NavItem>
+            <NavItem href="/Blog">المدونة</NavItem>
           </div>
           <ToggleTheme />
         </div>
