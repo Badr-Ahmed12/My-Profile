@@ -1,21 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-grid-pattern-dark: 
+    linear-gradient(
+      0deg,
+      transparent 24px,
+      rgba(255, 255, 255, 0.05) 2px,
+      transparent 24px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24px,
+      rgba(255, 255, 255, 0.05) 2px,
+      transparent 24px
+    );
+  --bg-grid-pattern-size-dark: 50px 50px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --bg-grid-pattern: 
+  linear-gradient(0deg, transparent 24%, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.05) 75%, rgba(0, 0, 0, 0.05) 76%, transparent 77%, transparent),
+  linear-gradient(90deg, transparent 24%, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.05) 75%, rgba(0, 0, 0, 0.05) 76%, transparent 77%, transparent);
+--bg-grid-pattern-size: 50px 50px;
+}
+
+.bg-grid-pattern {
+  background: var(--bg-grid-pattern);
+  background-size: var(--bg-grid-pattern-size);
+}
+
+:root {
+  --bg-primary: #d2e0ee;
+  --bg-secondary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --border-color: #dee2e6;
+}
+
+.dark {
+  --bg-primary: #2f3640;
+  --bg-secondary: #1a202c;
+  --text-primary: #f8f9fa;
+  --text-secondary: #adb5bd;
+  --border-color: #303030;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
 }
