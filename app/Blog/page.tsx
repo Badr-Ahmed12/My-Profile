@@ -9,7 +9,6 @@ export default function BlogPage() {
     <main
       className="min-h-screen py-12 px-4 sm:px-6 lg:px-8"
       style={{
-        backgroundColor: 'var(--bg-secondary)',
         color: 'var(--text-secondary)'
       }}
     >

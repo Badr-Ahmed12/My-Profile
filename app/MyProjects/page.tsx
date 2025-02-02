@@ -1,76 +1,90 @@
-"use client";
-
-import React from 'react';
-import { motion } from 'framer-motion';
+"use client"
+import { motion } from "framer-motion"
 
 interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
+  id: number
+  title: string
+  description: string
+  image: string
+  tags: string[]
 }
 
-// بيانات تجريبية للمشاريع
 const projects: Project[] = [
   {
     id: 1,
     title: "مشروع 1",
-    description: "شرح مختصر عن مشروع 1.",
-    image: "/projects/project1.jpg", // تأكد إن الصورة موجودة في مجلد public
+    description: "شرح مختصر عن مشروع 1. هذا المشروع يتميز بتصميم فريد وأداء عالي.",
+    image: "/placeholder.svg?height=400&width=600",
+    tags: ["تصميم", "برمجة", "تطوير واجهات"],
   },
   {
     id: 2,
     title: "مشروع 2",
-    description: "شرح مختصر عن مشروع 2.",
-    image: "/projects/project2.jpg",
+    description: "شرح مختصر عن مشروع 2. يركز هذا المشروع على تحسين تجربة المستخدم.",
+    image: "/placeholder.svg?height=400&width=600",
+    tags: ["تجربة المستخدم", "تصميم تفاعلي"],
   },
   {
     id: 3,
     title: "مشروع 3",
-    description: "شرح مختصر عن مشروع 3.",
-    image: "/projects/project3.jpg",
+    description: "شرح مختصر عن مشروع 3. هذا المشروع يستخدم أحدث التقنيات في مجال الويب.",
+    image: "/placeholder.svg?height=400&width=600",
+    tags: ["تقنيات حديثة", "أداء عالي"],
   },
-  // ممكن تضيف مشاريع تانية هنا...
-];
+]
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+}
 
 export default function ProjectsPage() {
   return (
-    <main className="container mx-auto p-4">
-      {/* عنوان الصفحة مع حركة دخول بسيطة */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl font-bold text-center mb-8"
-      >
-        مشاريعي
-      </motion.h1>
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white py-12 px-4 sm:px-6 lg:px-8 rtl">
+      <motion.div initial="hidden" animate="visible" variants={containerVariants} className="max-w-7xl mx-auto">
+        <motion.h1 variants={itemVariants} className="text-4xl font-bold text-center mb-12 text-gray-800">
+          مشاريعي
+        </motion.h1>
 
-      {/* شبكة عرض المشاريع */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
-        {projects.map((project) => (
-          <motion.div
-            key={project.id}
-            whileHover={{ scale: 1.02 }}
-            className="bg-white rounded-lg shadow overflow-hidden"
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
-              <p className="text-gray-700">{project.description}</p>
-            </div>
-          </motion.div>
-        ))}
+        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <motion.div key={project.id} variants={itemVariants}>
+              <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-2xl font-semibold text-gray-800 mb-2">{project.title}</h2>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, index) => (
+                      <span key={index} className="px-2 py-1 bg-gray-200 text-gray-700 text-sm rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
-    </main>
-  );
+    </div>
+  )
 }
+
