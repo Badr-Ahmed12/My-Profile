@@ -3,7 +3,7 @@
 import React from 'react';
 import ProfileImage from '@/components/ui/ProfileImage';
 import TextContent from '@/components/ui/TextHeroContent';
-
+ 
 const Hero: React.FC = () => {
   return (
     <section

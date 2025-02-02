@@ -3,35 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-}
-
-// بيانات تجريبية للتدوينات
-const posts: BlogPost[] = [
-  {
-    id: 1,
-    title: "أول تدوينة",
-    excerpt: "ده ملخص بسيط للتدوينة الأولى اللي بتتكلم عن تجاربي في تطوير الويب.",
-    date: "2025-01-01",
-  },
-  {
-    id: 2,
-    title: "ثاني تدوينة",
-    excerpt: "ملخص للتدوينة الثانية اللي بتستعرض أحدث التقنيات في عالم البرمجة.",
-    date: "2025-01-05",
-  },
-  {
-    id: 3,
-    title: "تدوينة جديدة",
-    excerpt: "أحدث النصائح والمقالات عن تطوير التطبيقات وكل جديد في المجال.",
-    date: "2025-01-10",
-  },
-];
+import { posts } from "@/Data/post"
 
 export default function BlogPage() {
   return (
@@ -52,18 +24,19 @@ export default function BlogPage() {
           <motion.div
             key={post.id}
             whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }} 
             className="bg-white rounded-lg shadow p-6"
           >
             <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
             <p className="text-gray-600 text-sm mb-4">
-              {new Date(post.date).toLocaleDateString("ar-EG", {
+              {new Date(post.title).toLocaleDateString("ar-EG", {
                 day: "numeric",
                 month: "long",
                 year: "numeric",
               })}
             </p>
-            <p className="text-gray-700 mb-4">{post.excerpt}</p>
-            <Link href={`/blog/${post.id}`} className="text-blue-600 hover:underline">
+            <p className="text-gray-700 mb-4">{post.content}</p>
+            <Link href={`/blog/${post.id}`} className="cursor-default text-blue-600 hover:underline">
               اقرأ المزيد
             </Link>
           </motion.div>
@@ -72,3 +45,5 @@ export default function BlogPage() {
     </main>
   );
 }
+
+

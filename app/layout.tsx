@@ -32,11 +32,13 @@ export default function RootLayout({
         />
         <div className="absolute inset-0 pointer-events-none bg-grid-pattern transition-all duration-500 ease-in-out" />
         <div className="relative z-10">
+         <div className="shapes-container" style={{ pointerEvents: "none" }}>
         <AnimatedGradientBlobs />
         <FloatingShapes />
          <DynamicGrid />
         <FloatingParticles />
         <ScrollIndicator />
+        </div>
           {children}
         </div>
         <Footer />

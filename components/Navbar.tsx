@@ -22,6 +22,8 @@ const Nav: React.FC = () => {
             <NavItem href="/MyProjects">مشاريعي</NavItem>
             <NavItem href="/contect">اتصل بي</NavItem>
             <NavItem href="/Blog">المدونة</NavItem>
+            <NavItem href="/admin">الادمن</NavItem>
+
           </div>
           <ToggleTheme />
         </div>
