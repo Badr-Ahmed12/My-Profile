@@ -53,27 +53,37 @@ const itemVariants = {
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white py-12 px-4 sm:px-6 lg:px-8 rtl">
+    <div
+      className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 rtl"
+      style={{
+        color: 'var(--text-secondary)',
+      }}
+    >
       <motion.div initial="hidden" animate="visible" variants={containerVariants} className="max-w-7xl mx-auto">
-        <motion.h1 variants={itemVariants} className="text-4xl font-bold text-center mb-12 text-gray-800">
+        <motion.h1 variants={itemVariants} className="text-4xl font-bold text-center mb-12">
           مشاريعي
         </motion.h1>
 
         <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <motion.div key={project.id} variants={itemVariants}>
-              <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-6">
-                  <h2 className="text-2xl font-semibold text-gray-800 mb-2">{project.title}</h2>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                <div className="p-6" 
+                  style={{
+                    backgroundColor: 'var(--bg-secondary)',
+                    color: 'var(--text-secondary)',
+                  }}
+                >
+                  <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+                  <p className="mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, index) => (
-                      <span key={index} className="px-2 py-1 bg-gray-200 text-gray-700 text-sm rounded-full">
+                      <span key={index} className="px-2 py-1 text-sm rounded-full">
                         {tag}
                       </span>
                     ))}
@@ -85,6 +95,6 @@ export default function ProjectsPage() {
         </motion.div>
       </motion.div>
     </div>
-  )
+  );
 }
 
