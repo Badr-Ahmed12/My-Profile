@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
 import { containerVariants, fadeInUp } from '../Effects/variants';
+import Link from 'next/link';
 
 const TextContent = () => (
   <motion.div
@@ -32,7 +33,7 @@ const TextContent = () => (
         variant="primary"
         className="group relative overflow-hidden px-8 py-4 text-lg"
       >
-        <span className="relative z-10">اكتشف أعمالي</span>
+        <Link href="/MyProjects" className="relative z-10">اكتشف أعمالي</Link>
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Button>
     </motion.div>
