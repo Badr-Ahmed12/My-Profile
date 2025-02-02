@@ -15,3 +15,4 @@ export function usePosts() {
 
   return { posts, setPosts };
 }
+
