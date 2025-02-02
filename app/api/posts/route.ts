@@ -1,5 +1,4 @@
-// app/api/posts/route.ts
-import { NextResponse } from 'next/server';
+ import { NextResponse } from 'next/server';
 import { posts, Post } from '@/Data/post';
 
 export async function GET() {
