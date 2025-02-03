@@ -1,6 +1,5 @@
 "use client"
 import { motion } from "framer-motion"
-import { User, Code, Book, Mail } from "lucide-react"
 import { containerVariants, itemVariants } from "./Effects/AboutAnimations"
 import { aboutData } from "@/Data/index"
 
