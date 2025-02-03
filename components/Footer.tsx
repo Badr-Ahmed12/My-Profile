@@ -16,48 +16,34 @@ const Footer: React.FC = () => {
       <ul className="flex flex-wrap justify-center space-x-4 text-sm md:text-base">
         <li className="mb-2 md:mb-4 flex items-center">
           <Code className="mr-2" size={16} />
-          
-   , 
-   , 
-   <a className="text-blue-500 hover:underline" href="https://nextjs.org">Next.js</a>, 
-   <a className="text-blue-500 hover:underline" href="https://tailwindcss.com">Tailwind CSS</a>, 
-   <a className="text-blue-500 hover:underline" href="https://typescriptlang.org">TypeScript</a>
           Built with{' '}
           <a className="text-blue-500 hover:underline" href="https://nextjs.org">Next.js</a>,{' '}
-          
-   <a className="text-blue-500 hover:underline" href="https://vercel.com">Vercel</a>
           <a className="text-blue-500 hover:underline" href="https://tailwindcss.com">Tailwind CSS</a>,{' '}
           <a className="text-blue-500 hover:underline" href="https://typescriptlang.org">TypeScript</a>
         </li>
         <li className="mb-2 md:mb-4 flex items-center">
-          
-   <a className="text-blue-500 hover:underline" href="https://github.com/Badr-Ahmed12/My-Profile">Github</a>
           <Globe className="mr-2" size={16} />
           Hosted on{' '}
           <a className="text-blue-500 hover:underline" href="https://vercel.com">Vercel</a>
         </li>
-          
-   : <a className="text-blue-500 hover:underline" href="mailto:badr.ahmed12@gmail.com">badr.ahmed12@gmail.com</a>
         <li className="mb-2 md:mb-4 flex items-center">
           <Github className="mr-2" size={16} />
           Source code available on{' '}
-          
-   : <a className="text-blue-500 hover:underline" href="tel:+201022221101">+201022221101</a>
           <a className="text-blue-500 hover:underline" href="https://github.com/Badr-Ahmed12/My-Profile">Github</a>
         </li>
         <li className="mb-2 md:mb-4 flex items-center">
-          
-   : <a className="text-blue-500 hover:underline" href="https://www.linkedin.com/in/badr-ahmed-/">LinkedIn</a>, <Twitter className="ml-2 mr-2" size={16} /><a className="text-blue-500 hover:underline" href="https://twitter.com/BadrAhmed12">Twitter</a>
           <Mail className="mr-2" size={16} />
-          Email: <a className="text-blue-500 hover:underline" href="mailto:badr.ahmed12@gmail.com">badr.ahmed12@gmail.com</a>
+          Email: <a className="text-blue-500 hover:underline" href="mailto:isob83709@gmail.com">isob83709@gmail.com</a>
         </li>
         <li className="mb-2 md:mb-4 flex items-center">
           <Phone className="mr-2" size={16} />
-          Phone: <a className="text-blue-500 hover:underline" href="tel:+201022221101">+201022221101</a>
+          Phone: <a className="text-blue-500 hover:underline" href="tel:+01026501750">+01026501750</a>
         </li>
         <li className="mb-2 md:mb-4 flex items-center">
           <Linkedin className="mr-2" size={16} />
-          Social media: <a className="text-blue-500 hover:underline" href="https://www.linkedin.com/in/badr-ahmed-/">LinkedIn</a>, <Twitter className="ml-2 mr-2" size={16} /><a className="text-blue-500 hover:underline" href="https://twitter.com/BadrAhmed12">Twitter</a>
+          Social media: <a className="text-blue-500 hover:underline" href="https://www.linkedin.com/in/badr-ahmed-872541338/">LinkedIn</a>, 
+          <Twitter className="ml-2 mr-2" size={16} />
+          <a className="text-blue-500 hover:underline" href="https://x.com/badr_iso37339">Twitter</a>
         </li>
       </ul>
     </footer>
@@ -65,5 +51,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
-
