@@ -30,7 +30,11 @@ export default function AboutSection() {
             className="space-y-6 text-lg leading-relaxed"
           >
             {aboutData.map(({ icon: Icon, text }, index) => (
-              <motion.div  variants={itemVariants} className="flex items-start space-x-4 rtl:space-x-reverse">
+              <motion.div
+                key={index}  // Add the key prop here
+                variants={itemVariants}
+                className="flex items-start space-x-4 rtl:space-x-reverse"
+              >
                 <Icon className="w-6 h-6 mt-1" />
                 <p>{text}</p>
               </motion.div>
@@ -50,5 +54,3 @@ export default function AboutSection() {
     </main>
   )
 }
-
-
