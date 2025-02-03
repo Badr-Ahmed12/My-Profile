@@ -14,7 +14,6 @@ export default function AdminPage() {
   const [content, setContent] = useState("");
   const [editingPost, setEditingPost] = useState<Post | null>(null);
 
-  // دالة لجلب المشاركات من API
   const fetchPosts = async () => {
     try {
       const res = await fetch("/api/posts");
@@ -29,7 +28,6 @@ export default function AdminPage() {
     fetchPosts();
   }, []);
 
-  // دالة الإضافة أو التعديل
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -39,7 +37,6 @@ export default function AdminPage() {
     }
 
     if (editingPost) {
-      // تعديل مشاركة موجودة
       await fetch(`/api/posts/${editingPost.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -47,7 +44,6 @@ export default function AdminPage() {
       });
       setEditingPost(null);
     } else {
-      // إضافة مشاركة جديدة
       await fetch("/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -59,14 +55,12 @@ export default function AdminPage() {
     fetchPosts();
   };
 
-  // دالة بدء التعديل
   const handleEdit = (post: Post) => {
     setEditingPost(post);
     setTitle(post.title);
     setContent(post.content);
   };
 
-  // دالة الحذف
   const handleDelete = async (id: string) => {
     if (confirm("متأكد إنك عايز تحذف المشاركة؟")) {
       await fetch(`/api/posts/${id}`, {
